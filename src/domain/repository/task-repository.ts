@@ -1,11 +1,11 @@
 import e from "express";
-import { TaskEntity } from "../entities/task-entitie";
+import { TaskEntity } from "../entities/task-entity";
 
 export interface TaskRepository{
     createTask(task: TaskEntity): Promise<TaskEntity>;
-    getTaskById(id: string): Promise<TaskEntity>;
-    getTasks(): Promise<TaskEntity[]>;
+    getTasks(id: string): Promise<TaskEntity>;
     updateTask(task: TaskEntity): Promise<TaskEntity>;
     deleteTask(id: string): Promise<TaskEntity>;
+    listTasks(): Promise<TaskEntity[]>;
     
 }
