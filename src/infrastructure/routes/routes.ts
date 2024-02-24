@@ -1,29 +1,30 @@
 import express from "express";
 import { TaskController } from "../../infrastructure/controllers/task-controller";
+import { taskController } from "../dependencies";
 
 export const taskRouter = express.Router();
 
 taskRouter.post(
     "/",
-    TaskController.create.bind(TaskController)
+    taskController.create.bind(taskController)
 );
 
 taskRouter.get(
     "/",
-    TaskController.list.bind(TaskController)
+    taskController.list.bind(TaskController)
 );
 
 taskRouter.get(
     "/:id",
-    TaskController.get.bind(TaskController)
+    taskController.get.bind(TaskController)
 );
 
 taskRouter.put(
     "/:id",
-    TaskController.update.bind(TaskController)
+    taskController.update.bind(TaskController)
 );
 
 taskRouter.delete(
     "/:id",
-    TaskController.delete.bind(TaskController)
+    taskController.delete.bind(TaskController)
 );

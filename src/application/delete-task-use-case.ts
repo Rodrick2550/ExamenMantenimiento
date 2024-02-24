@@ -6,7 +6,7 @@ export class DeleteTaskUseCase{
 
     async execute(id: string): Promise<void>{
 
-        await this.taskRepository.deleteTask(id);
+        await this.taskRepository.delete(id);
         return;
     }
 }

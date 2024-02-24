@@ -4,6 +4,6 @@ export class ListTaskUseCase{
     constructor(private readonly taskRepository: TaskRepository){}
 
     async execute(id: string){
-        return await this.taskRepository.listTasks();
+        return await this.taskRepository.list();
     }
 }

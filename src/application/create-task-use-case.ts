@@ -9,7 +9,7 @@ export class CreateTaskUseCase{
     async execute(title: string, description: string): Promise<TaskEntity>{
         const id = uuid4();
         const task = new TaskEntity(id, title, description, false); // Pass all four required arguments
-        return this.taskRepository.createTask(task);
+        return this.taskRepository.create(task);
         
     }
 

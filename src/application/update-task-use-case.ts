@@ -7,7 +7,7 @@ export class UpdateTaskUseCase{
 
     async execute(id: string, task: TaskInterface): Promise<TaskEntity| null>{
         // Add a return statement here
-        const foundTask = await this.taskRepository.getTasks(id);
+        const foundTask = await this.taskRepository.get(id);
         if(!foundTask) return null;
 
 
@@ -15,6 +15,6 @@ export class UpdateTaskUseCase{
         foundTask.description = task.description;
         foundTask.status = task.status;
 
-        return await this.taskRepository.updateTask(foundTask);
+        return await this.taskRepository.update(foundTask);
     }
 }
